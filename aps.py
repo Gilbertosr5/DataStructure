@@ -1,4 +1,6 @@
-def insertionSort(array):
+list = []
+
+def insertionSort(array):   
   for i in range(1, len(array)):
     key = array[i]
 
@@ -44,9 +46,21 @@ def heapSort(array):
     heapify(array, i, 0) 
 
 
-ray = [9,3,6,5,1]
-print(f"Array Before: {ray}")
+with open('1000_numbers.txt') as f:
+  list = f.readlines()
 
-insertionSort(ray)
-bubbleSort(ray)
-heapSort(ray)
+for i in range(0, len(list)):
+  list[i] = list[i].replace("\n", "")
+  list[i] = int(list[i])
+
+print(".")
+print("=-"*20 + "INSERTION SORT" + "=-"*20)
+insertionSort(list)
+
+print(".")
+print("=-"*20 + "BUBBLE SORT" + "=-"*20)
+bubbleSort(list)
+
+print(".")
+print("=-"*20 + "HEAP SORT" + "=-"*20)
+heapSort(list) #Verificar o porque não está dando certo
