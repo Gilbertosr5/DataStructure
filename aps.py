@@ -64,4 +64,4 @@ bubbleSort(list)
 
 print(".")
 print("=-"*20 + "HEAP SORT" + "=-"*20)
-heapSort(list) #Verificar o porque não está dando certo
+heapSort(list)
