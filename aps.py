@@ -9,7 +9,7 @@ def insertionSort(array):
       array[j + 1] = array[j]
       array[j] = key
       j -= 1
-  print(f'InsertionSort: {array}')
+  print(array)
 
 def bubbleSort(array):  
   for i in range(0,len(array)-1): 
@@ -18,7 +18,7 @@ def bubbleSort(array):
         key = array[j] 
         array[j] = array[j+1] 
         array[j+1] = key 
-  print(f'BubbleSort: {array}')  
+  print(array)
 
 def heapify(array, n, i):
   maior = i 
@@ -44,14 +44,15 @@ def heapSort(array):
   for i in range(n - 1, 0, -1):
     (array[i], array[0]) = (array[0], array[i]) 
     heapify(array, i, 0) 
+  
+  print(array)
 
-
+#Coletando o arquivo com os números e tratando ele a uma lista
 with open('1000_numbers.txt') as f:
   list = f.readlines()
 
 for i in range(0, len(list)):
-  list[i] = list[i].replace("\n", "")
-  list[i] = int(list[i])
+  list[i] = int(list[i].replace("\n", ""))
 
 print(".")
 print("=-"*20 + "INSERTION SORT" + "=-"*20)
